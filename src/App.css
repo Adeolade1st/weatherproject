@@ -2,9 +2,26 @@
   text-align: center;
   border: 2px solid blueviolet;
   max-width: 900px;
-  height: 560px;
+  height: 650px;
 }
 
+.btn-primary {
+
+  margin-left: 0;
+
+}
+
+.temp {
+  font-size: 80px;
+
+}
+
+.degree {
+  position: absolute;
+  margin-top: 30px;
+  font-size: 20px;
+
+}
 
 
 h1{
@@ -14,9 +31,9 @@ h1{
 
 h2{
   text-align: center;
-  margin-top: 30px;
+  margin-top: 5px;
   font-size: 80px;
-  font-weight: 800;
+  
 }
 
 
@@ -29,8 +46,9 @@ h2{
 
 
 footer{
-  margin-top: 90px;
-  opacity: 70px;
+  margin-top: 70px;
+
 
 
 }
+

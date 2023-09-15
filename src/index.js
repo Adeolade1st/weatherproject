@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App temperature={24} humidity={94} description="Over Cast" wind={2} city="Lagos" />
+    <App temperature={24} humidity={94} description="Over Cast" wind={2} city="Jos" />
   </React.StrictMode>
 );
 
