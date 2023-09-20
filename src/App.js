@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './App.css';
 import axios from "axios";
 import Forecast from "./Forecast";
+import DateTime from "./DateTime";
 
 
 function App(props) {
@@ -22,7 +23,7 @@ function App(props) {
         wind: 12,
         description: response.data.weather[0].description,
         humidity:80,
-        date: "Wednesday, 12:14",
+        date: new Date(response.data.dt*1000),
         city: response.data.name,
         icon: "https://openweathermap.org/img/wn/10d@2x.png"
    
@@ -56,7 +57,7 @@ function App(props) {
       
 
         <div className='row'>
-    <div className='col-3'>Updated On:{weatherDetails.date}</div>
+    <div className='col-3'>Updated On:<DateTime date={weatherDetails.date} /></div>
     <div className='col-3 text-capitalize'>Description: {weatherDetails.description} </div>
     <div className='col-3'>Humidity: {weatherDetails.humidity}%</div>
     <div className='col-3'>Wind: {weatherDetails.wind}km/h</div>
