@@ -4,13 +4,14 @@ import axios from "axios";
 import Forecast from "./Forecast";
 import DateTime from "./DateTime";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 
 function App(props) {
 
   const [weatherDetails, setWeatherDetails ] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
-  //const [celciusTemp, setCelciusTemp] = (" ");
+
  
 
    
@@ -29,7 +30,9 @@ function App(props) {
         humidity:80,
         date: new Date(response.data.dt*1000),
         city: response.data.name,
-        iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}13d@2x.png`,
+        iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+
+      
 
       
    
@@ -39,15 +42,17 @@ function App(props) {
       });
     }
 
-    function search(){
+    function search()
+    {
          const apiKey = "1d038ee28ef2727a9f0310860ac10ae9";
-    let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-     axios.get(apiLink).then(getWeatherUpdate);
+        let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiLink).then(getWeatherUpdate);
 
 
     }
 
-    function handleSubmit (event){
+    function handleSubmit (event)
+    {
       event.preventDefault();
 
       search();
@@ -80,8 +85,8 @@ function App(props) {
 
       <div className="row">
             <div className='col-sm-4'>
-                 <img src={weatherDetails.iconUrl} alt=" " className="float-left"></img> 
-                <WeatherTemperature degree={weatherDetails.temperature}/>
+                <WeatherIcon icon={weatherDetails.iconUrl} iconDescription={weatherDetails.description}/>
+                <WeatherTemperature degree={weatherDetails.temperature} />
            </div> 
            <div className='col-sm-8'><h2>{weatherDetails.city}</h2></div>
       </div>
