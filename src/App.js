@@ -105,11 +105,8 @@ function App(props) {
      </div>
     
      <Forecast />
-        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a>  and Hosted on render.</footer>
+        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> render.</a></footer>
    
-
-   
- 
 
     </div>
   );
