@@ -1,8 +1,9 @@
 .App{
   text-align: center;
-  border: 2px solid blueviolet;
-  max-width: 900px;
+  border: 2px solid grey;
+  max-width: 1000px;
   height: 650px;
+  box-shadow: 5px 2px 5px grey;
 }
 
 .btn-primary {
@@ -12,37 +13,36 @@
 }
 
 .temp {
-  font-size: 60px;
+  font-size: 10px;
+  margin-right: 0px;
+  font-size: 50px;
+ 
 
 }
 
+
+
 .degree {
-  position: absolute;
-  margin-top: 40px;
+ 
+  margin-right: 80px;
   font-size: 15px;
-  top: 170px;
+  position: absolute;
+  top: 200px;
+
+
 
   
 
 }
 
-.degree a{
-  text-decoration: none;
-}
-
-
-
 
 h1{
-  margin: 30px 0 30px;
  
-}
-
-h2{
-  text-align: center;
-  margin-top: 5px;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 30px;
   font-weight: 600;
+  margin-left: 40px;
+
   
 }
 

@@ -76,26 +76,28 @@ function App(props) {
     <div className="container App mt-5 ">
       <div className="container ">
             <div className="row mt-5 " >
+                
             <form onSubmit={handleSubmit} className="d-flex justify-content-evenly mb-5">
             <div className="col-9"><input type="text" autoFocus="yes" placeholder="Type a city" className="form-control search" onChange={changeCity} /></div>
             <div className="col-3"><button className="btn btn-primary" >Search</button></div>
             </form>
             </div>        
         </div>
-
-      <div className="row">
-            <div className='col-sm-4'>
-                <WeatherIcon icon={weatherDetails.iconUrl} iconDescription={weatherDetails.description}/>
-                <WeatherTemperature degree={weatherDetails.temperature} />
-           </div> 
-           <div className='col-sm-8'><h2>{weatherDetails.city}</h2></div>
-      </div>
+     <div className="container">
+            <div className="row">
+                <div className='col-6'>
+                        
+                    <span><span className="temp"><WeatherTemperature degree={weatherDetails.temperature} /></span><WeatherIcon icon={weatherDetails.iconUrl} iconDescription={weatherDetails.description}/>  </span>   
+                </div> 
+                     <div className="col-6"><h1> {weatherDetails.city}</h1></div> 
+            </div>
+    </div>  
 
 
 
       
 
-        <div className='row'>
+        <div className='row mt-4'>
         <div className='col-3 '>Updated On:<DateTime date={weatherDetails.date} /></div>
         <div className='col-3 text-capitalize '>Description: {weatherDetails.description} </div>
         <div className='col-3'>Humidity: {weatherDetails.humidity}%</div>
