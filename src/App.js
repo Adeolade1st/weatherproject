@@ -3,11 +3,15 @@ import './App.css';
 import axios from "axios";
 import Forecast from "./Forecast";
 import DateTime from "./DateTime";
+import WeatherTemperature from "./WeatherTemperature";
 
 
 function App(props) {
 
   const [weatherDetails, setWeatherDetails ] = useState({ready: false});
+  const [city, setCity] = useState(props.defaultCity);
+  //const [celciusTemp, setCelciusTemp] = (" ");
+ 
 
    
     
@@ -25,13 +29,39 @@ function App(props) {
         humidity:80,
         date: new Date(response.data.dt*1000),
         city: response.data.name,
-        icon: "https://openweathermap.org/img/wn/10d@2x.png"
+        iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}13d@2x.png`,
+
+      
    
         
         
-        
+      
       });
     }
+
+    function search(){
+         const apiKey = "1d038ee28ef2727a9f0310860ac10ae9";
+    let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+     axios.get(apiLink).then(getWeatherUpdate);
+
+
+    }
+
+    function handleSubmit (event){
+      event.preventDefault();
+
+      search();
+
+
+    }
+
+    function changeCity (event){
+      setCity(event.target.value);
+
+    }
+
+   
+    
 
    
    
@@ -39,52 +69,55 @@ function App(props) {
 
       return (
     <div className="container App mt-5 ">
-      <div className="container">
-         <div className="row mt-5 " >
-            <form >
-            <div className="col-9"><input type="text" autoFocus="yes" placeholder="Type a city" className="form-control search" /></div>
+      <div className="container ">
+            <div className="row mt-5 " >
+            <form onSubmit={handleSubmit} className="d-flex justify-content-evenly mb-5">
+            <div className="col-9"><input type="text" autoFocus="yes" placeholder="Type a city" className="form-control search" onChange={changeCity} /></div>
             <div className="col-3"><button className="btn btn-primary" >Search</button></div>
             </form>
-                
-            
+            </div>        
+        </div>
 
-            </div>
       <div className="row">
-        <div className='col-sm-4'><strong className="temp"> <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="partly-cloudy" className="img-fluid "></img>  {Math.round(weatherDetails.temperature)}</strong><span className='degree'>°C</span></div>
-        <div className='col-sm-8'><h2>{weatherDetails.city}</h2></div>
+            <div className='col-sm-4'>
+                 <img src={weatherDetails.iconUrl} alt=" " className="float-left"></img> 
+                <WeatherTemperature degree={weatherDetails.temperature}/>
+           </div> 
+           <div className='col-sm-8'><h2>{weatherDetails.city}</h2></div>
       </div>
+
+
 
       
 
         <div className='row'>
-    <div className='col-3'>Updated On:<DateTime date={weatherDetails.date} /></div>
-    <div className='col-3 text-capitalize'>Description: {weatherDetails.description} </div>
-    <div className='col-3'>Humidity: {weatherDetails.humidity}%</div>
-    <div className='col-3'>Wind: {weatherDetails.wind}km/h</div>
-   </div>
+        <div className='col-3 '>Updated On:<DateTime date={weatherDetails.date} /></div>
+        <div className='col-3 text-capitalize '>Description: {weatherDetails.description} </div>
+        <div className='col-3'>Humidity: {weatherDetails.humidity}%</div>
+        <div className='col-3'>Wind: {weatherDetails.wind}km/h</div>
+     </div>
     
      <Forecast />
-   <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a>  and Hosted on render.</footer>
-   </div>
+        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a>  and Hosted on render.</footer>
+   
 
    
  
+
     </div>
-
-   
-
   );
-
-
-     }else{
-       const apiKey = "1d038ee28ef2727a9f0310860ac10ae9";
-    let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-     axios.get(apiLink).then(getWeatherUpdate);
-
+  
+    }else{
+    
+      search ();
       return "Loading";
       
 
      }
+   
+
+
+     
 
   
 
