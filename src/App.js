@@ -30,6 +30,7 @@ function App(props) {
         humidity:80,
         date: new Date(response.data.dt*1000),
         city: response.data.name,
+        coordinates: response.data.coord,
         iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 
       
@@ -104,7 +105,7 @@ function App(props) {
         <div className='col-3'>Wind: {weatherDetails.wind}km/h</div>
      </div>
     
-     <Forecast />
+     <Forecast coordination={weatherDetails.coordinates}/>
         <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> render.</a></footer>
    
 
@@ -114,11 +115,11 @@ function App(props) {
     }else{
     
       search ();
-      return "Loading";
+      return "Loading now...";
       
 
      }
-   
+    
 
 
      
