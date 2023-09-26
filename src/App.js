@@ -79,7 +79,7 @@ function App(props) {
             <div className="row mt-5 " >
                 
             <form onSubmit={handleSubmit} className="d-flex justify-content-evenly mb-5">
-            <div className="col-9"><input type="text" autoFocus="yes" placeholder="Type a city" className="form-control search" onChange={changeCity} /></div>
+            <div className="col-9  search-input"><input type="text" autoFocus="yes" placeholder="Type a city" className="form-control search" onChange={changeCity} /></div>
             <div className="col-3"><button className="btn btn-primary" >Search</button></div>
             </form>
             </div>        
@@ -106,9 +106,12 @@ function App(props) {
      </div>
     
      <Forecast coordination={weatherDetails.coordinates}/>
-        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> Render.</a></footer>
+        <footer className="footer">This Project Was Coded by <a href =" https://myportfolio-asci.onrender.com/about.html"> <span className="la">Ilavbare Adeola</span></a>, open-sourced on <a href=" https://github.com/Adeolade1st/react-weather-project"><span className="github">Github</span></a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> <span className="render">Render</span>.</a></footer>
    
+       
 
+       
+        
     </div>
   );
   
