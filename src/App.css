@@ -20,6 +20,14 @@
 
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: blue;
+}
 
 
 .degree {
@@ -29,12 +37,11 @@
   position: absolute;
   top: 200px;
 
-
-
-  
-
 }
 
+.weatherInfo{
+  color: blue;
+}
 
 h1{
  

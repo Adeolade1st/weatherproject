@@ -37,7 +37,7 @@ export default function Forecast(props) {
       <div className="container">
         <div className="row mt-4">
           {forecastWeather.map((day, index) => (
-            <div className="col-2" key={index}>
+            <div className="col-2 date" key={index}>
               <div>{getDayOfWeek(index)}</div>
               <div>
                 <img

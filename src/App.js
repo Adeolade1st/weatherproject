@@ -99,14 +99,14 @@ function App(props) {
       
 
         <div className='row mt-4'>
-        <div className='col-3 '>Updated On:<DateTime date={weatherDetails.date} /></div>
-        <div className='col-3 text-capitalize '>Description: {weatherDetails.description} </div>
-        <div className='col-3'>Humidity: {weatherDetails.humidity}%</div>
-        <div className='col-3'>Wind: {weatherDetails.wind}km/h</div>
+        <div className='col-3 weatherInfo'>Updated On:<DateTime date={weatherDetails.date} /></div>
+        <div className='col-3 text-capitalize weatherInfo'>Description: {weatherDetails.description} </div>
+        <div className='col-3 weatherInfo'>Humidity: {weatherDetails.humidity}%</div>
+        <div className='col-3 weatherInfo'>Wind: {weatherDetails.wind}km/h</div>
      </div>
     
      <Forecast coordination={weatherDetails.coordinates}/>
-        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> render.</a></footer>
+        <footer>This Project Was Coded by <a href ="https://github.com/Adeolade1st/react-weather-project">Ilavbare Adeola</a> and Hosted on <a href="https://react-weather-project-ws2x.onrender.com/"> Render.</a></footer>
    
 
     </div>
@@ -123,7 +123,6 @@ function App(props) {
 
 
      
-
   
 
  
