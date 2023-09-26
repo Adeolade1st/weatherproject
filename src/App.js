@@ -99,7 +99,7 @@ function App(props) {
       
 
         <div className='row mt-4'>
-        <div className='col-3 weatherInfo'>Updated On:<DateTime date={weatherDetails.date} /></div>
+        <div className='col-3 weatherInfo'><DateTime date={weatherDetails.date} /></div>
         <div className='col-3 text-capitalize weatherInfo'>Description: {weatherDetails.description} </div>
         <div className='col-3 weatherInfo'>Humidity: {weatherDetails.humidity}%</div>
         <div className='col-3 weatherInfo'>Wind: {weatherDetails.wind}km/h</div>
