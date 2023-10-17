@@ -42,7 +42,7 @@ export default function WeatherTemperature(props)
                <div className="WeatherTemperature">
                 <strong className="temp">{Math.round(props.degree)}</strong>
                 <span className='degree'>
-                 <a href="/" onClick={showCelcius}> °C |</a>  °F
+                 <span onClick={showCelcius}>°C </span>
                 </span>
         </div>  
           
